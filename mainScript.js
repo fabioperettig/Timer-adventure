@@ -71,7 +71,7 @@ function stopWatch(){
 function StartPause(){
     document.getElementById("StopTimer").style.display=null;
     if (status === "parado") {
-        interval = window.setInterval(stopWatch, 10);
+        interval = window.setInterval(stopWatch, 1000);
         document.getElementById("StartPause").innerHTML="Pausar";
         document.getElementById("rest").style.display="none";
         status = "iniciado";
