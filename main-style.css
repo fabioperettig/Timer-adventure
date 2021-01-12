@@ -1,0 +1,109 @@
+:root {
+    font-size: 1rem;
+    font-family: 'Space Mono', monospace;
+    --text-primary: #ffeed4;
+    --text-secondary: #ffffff;
+    --btn-color: #FFBE1C;
+    --btn-color-hover: #FFF1BF;
+    --btn-color-2: #D856FF;
+    --btn-color-hover-2: #ffb820;
+    --bg-primary: #1a1026;
+    --bg-secondary: #141411;
+    --tool-bar:#ffbe1c;
+    --tool-bar-2: #e18700;
+}
+
+body {
+    background-color: var(--bg-primary);
+    max-width: 100%;
+    display: grid;
+    grid-template-areas: "Logo" "Display" "Buttons" "Text";
+}
+
+.mainlogo, .display, .buttons-area, .back, .fim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back, .fim {
+    color: var(--text-secondary);
+    text-align: justify;
+    margin: 0 4rem;
+    font-size: 1.5rem;
+}
+
+.fim {
+    margin: 2rem 0;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.display {
+    font-size: 10rem;
+    color: var(--text-secondary);
+    grid-area: Display;
+}
+
+.mainlogo {
+    grid-area: Logo;
+}
+
+.logo {
+    width: 40%;
+}
+
+.buttons-area {
+    grid-area: Buttons;
+}
+
+.coin {
+    width: 8.5rem;
+    display: block;
+    margin: 3rem auto 1rem auto;
+}
+
+.coin-coffee {
+    width: 6rem;
+    display: block;
+    margin: -1rem auto -3rem auto;
+}
+
+.btn-back {
+    display: block;
+    margin: 3rem auto 1rem auto;
+}
+
+button {
+    font-size:2rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 12rem;
+    height: 4rem;
+    margin: .5rem;
+    outline: none;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--btn-color-2);
+    color: var(--text-secondary);
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    animation: none;
+    background-color: var(--btn-color-hover-2);
+}
+
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--tool-bar);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--tool-bar-2);
+}
