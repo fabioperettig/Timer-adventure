@@ -53,6 +53,7 @@ let status = "parado";
 
 //document.title = stopWatch();
 
+uSeconds.classList.add("uSeconds");
 
 //document.getElementsById("Title")="Timer Adventure"+displayHours+":"+displayMinutes+":"+displaySeconds;
 
