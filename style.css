@@ -27,7 +27,7 @@ body {
 }
 
 .timer-text-area {
-    font-family: 'Merienda', cursive;
+    font-family: 'Merienda', cursive, monospace;
 }
 
 .back, .fim {
@@ -44,16 +44,23 @@ body {
 }
 
 .display {
+    font-variant-numeric:tabular-nums;
+    font-family: 'Merienda', monospace;
     font-size: 10rem;
     color: var(--text-secondary);
     grid-area: Display;
-    font-family: 'Space Mono', monospace;
     display: block;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
 }
 
-.uSeconds {
-    font-size:5rem;
+div p span { font-size: 4rem;}
+
+div p {margin: 0 auto;}
+
+.ultraSeconds {
+    font-size: 50%;
 }
 
 .mainlogo {
@@ -118,3 +125,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background: var(--tool-bar-2);
 }
+
+
+@media only screen and (max-width: 800px) {.display { width: 400px; font-size: 6rem; } div p span { font-size: 2rem;} .fim { font-size: 2rem; } .logo {width: 70%; margin-top: 2rem;} }
+@media only screen and (max-width: 500px) {.display { width: 350px; font-size: 5rem; } div p span { font-size: 2rem;} .fim { font-size: 2.5rem; } .logo {width: 90%; margin-top: 2rem;} .back{font-size: 1.05rem;} }
