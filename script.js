@@ -47,11 +47,8 @@ let displaySeconds = 0;
 let displayMinutes = 0;
 let displayHours = 0;
 
-//setInterval let
 let interval = null;
 let status = "parado";
-
-//document.title = stopWatch();
 
 uSeconds.classList.add("uSeconds");
 
