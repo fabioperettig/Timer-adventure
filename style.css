@@ -26,6 +26,10 @@ body {
     justify-content: center;
 }
 
+.timer-text-area {
+    font-family: 'Merienda', cursive;
+}
+
 .back, .fim {
     color: var(--text-secondary);
     text-align: justify;
@@ -43,6 +47,7 @@ body {
     font-size: 10rem;
     color: var(--text-secondary);
     grid-area: Display;
+    font-family: 'Merienda', cursive;
 }
 
 .mainlogo {
