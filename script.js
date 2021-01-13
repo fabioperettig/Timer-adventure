@@ -36,47 +36,47 @@ document.getElementById("stage009A").style.display="none";
 
 
 //time values
-//let uSeconds = 0;
+let uSeconds = 0;
 let Seconds = 0;
 let Minutes = 0;
 let Hours = 0;
 
 //time "display" values
-//let displayuSeconds = 0;
+let displayuSeconds = 0;
 let displaySeconds = 0;
 let displayMinutes = 0;
 let displayHours = 0;
 
-//setInterval let
+setInterval let
 let interval = null;
 let status = "parado";
 
 //document.title = stopWatch();
 
-//uSeconds.classList.add("uSeconds");
+uSeconds.classList.add("uSeconds");
 
 //document.getElementsById("Title")="Timer Adventure"+displayHours+":"+displayMinutes+":"+displaySeconds;
 
 //stopWatch function
 function stopWatch(){
-    Seconds++;
+    uSeconds++;
 
-    //if(uSeconds/99 ===1 ){ uSeconds = 0; Seconds++; }
+    if(uSeconds/99 ===1 ){ uSeconds = 0; Seconds++; }
     if(Seconds/60 ===1 ){ Seconds = 0; Minutes++; }
     if(Minutes/60 ===1 ){ Minutes = 0; Hours++; }
 
-    //if(uSeconds < 10) { displayuSeconds  = "0" +  uSeconds.toString() } else { displayuSeconds =  uSeconds}
+    if(uSeconds < 10) { displayuSeconds  = "0" +  uSeconds.toString() } else { displayuSeconds =  uSeconds}
     if(Seconds < 10) { displaySeconds  = "0" +  Seconds.toString() } else { displaySeconds =  Seconds}
     if(Minutes < 10) { displayMinutes = "0" + Minutes.toString() } else { displayMinutes = Minutes}
     if(Hours < 10) { displayHours = "0" + Hours.toString() } else { displayHours = Hours}
 
-    document.getElementById("display").innerHTML = displayHours+":"+displayMinutes+":"+displaySeconds+":"+displayuSeconds;
+    document.getElementById("display").innerHTML = displayHours+":"+displayMinutes+":"+displaySeconds+displayuSeconds;
 }
 
 function StartPause(){
     document.getElementById("StopTimer").style.display=null;
     if (status === "parado") {
-        interval = window.setInterval(stopWatch, 1000);
+        interval = window.setInterval(stopWatch, 10);
         document.getElementById("StartPause").innerHTML="Pausar";
         document.getElementById("rest").style.display="none";
         status = "iniciado";
