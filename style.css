@@ -129,3 +129,4 @@ body::-webkit-scrollbar-thumb {
 
 @media only screen and (max-width: 800px) {.display { width: 400px; font-size: 6rem; } div p span { font-size: 2rem;} .fim { font-size: 2rem; } .logo {width: 70%; margin-top: 2rem;} }
 @media only screen and (max-width: 500px) {.display { width: 350px; font-size: 5rem; } div p span { font-size: 2rem;} .fim { font-size: 2.5rem; } .logo {width: 90%; margin-top: 2rem;} .back{font-size: 1.05rem;} }
+@media only screen and (max-width: 400px) {.display { width: 320px; font-size: 4.25rem; } button {width: 10rem; font-size: 1.5rem;} }
