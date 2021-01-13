@@ -48,6 +48,8 @@ body {
     color: var(--text-secondary);
     grid-area: Display;
     font-family: 'Merienda', cursive;
+    display: block;
+    margin: 0 auto;
 }
 
 .uSeconds {
