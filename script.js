@@ -67,6 +67,7 @@ function stopWatch(){
     if(Hours < 10) { displayHours = "0" + Hours.toString() } else { displayHours = Hours}
 
     document.getElementById("display").innerHTML =`<p>${displayHours}:${displayMinutes}:${displaySeconds}</p>`; //<span>${displayuSeconds}</span>
+    setInterval(function() {document.title = displayHours + ":" + displayMinutes + ":" + displaySeconds}, 10);
 }
 
 function StartPause(){
