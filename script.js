@@ -78,6 +78,7 @@ function StartPause(){
         document.getElementById("StartPause").innerHTML="Pausar";
         document.getElementById("rest").style.display="none";
         status = "iniciado";
+        setInterval(function() {document.title = displayHours + ":" + displayMinutes + ":" + displaySeconds}, 1000);
     } else {
         window.clearInterval(interval);
         document.getElementById("StartPause").innerHTML="Continue";
