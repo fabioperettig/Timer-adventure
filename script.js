@@ -1,50 +1,27 @@
-document.getElementById("rest").style.display="none";
-document.getElementById("StopTimer").style.display="none";
-document.getElementById("reloadPage").style.display="none";
-document.getElementById("stage001A").style.display="none";
-document.getElementById("stage001B").style.display="none";
-document.getElementById("stage001C").style.display="none";
-document.getElementById("stage001D").style.display="none";
-document.getElementById("stage001E").style.display="none";
-document.getElementById("stage001.5A").style.display="none";
-document.getElementById("stage001.5B").style.display="none";
-document.getElementById("stage001.5C").style.display="none";
-document.getElementById("stage001.5D").style.display="none";
-document.getElementById("stage002A").style.display="none";
-document.getElementById("stage002B").style.display="none";
-document.getElementById("stage002C").style.display="none";
-document.getElementById("stage003A").style.display="none";
-document.getElementById("stage003B").style.display="none";
-document.getElementById("stage003C").style.display="none";
-document.getElementById("stage003D").style.display="none";
-document.getElementById("stage003.5A").style.display="none";
-document.getElementById("stage003.5B").style.display="none";
-document.getElementById("stage003.5C").style.display="none";
-document.getElementById("stage004A").style.display="none";
-document.getElementById("stage004B").style.display="none";
-document.getElementById("stage005").style.display="none";
-document.getElementById("stage006A").style.display="none";
-document.getElementById("stage006B").style.display="none";
-document.getElementById("stage007A").style.display="none";
-document.getElementById("stage007B").style.display="none";
-document.getElementById("stage007C").style.display="none";
-document.getElementById("stage008A").style.display="none";
-document.getElementById("stage008B").style.display="none";
-document.getElementById("stage008C").style.display="none";
-document.getElementById("stage008D").style.display="none";
-document.getElementById("stage009A").style.display="none";
+const stageIds = ["rest", "StopTimer", "reloadPage",
+  "stage001A", "stage001B", "stage001C", "stage001D", "stage001E",
+  "stage002A", "stage002B", "stage002C",
+  "stage003A", "stage003B", "stage003C", "stage003D",
+  "stage004A", "stage004B",
+  "stage005",
+  "stage006A", "stage006B",
+  "stage007A", "stage007B", "stage007C",
+  "stage008A", "stage008B", "stage008C", "stage008D",
+  "stage009A",
+  "stage001.5A", "stage001.5B", "stage001.5C", "stage001.5D",
+  "stage003.5A", "stage003.5B", "stage003.5C",
+];
 
+function hideElements() {
+  stageIds.forEach((id) => {
+    document.getElementById(id).style.display = "none";
+  });
+}
 
-//time values
-//let uSeconds = 0;
 let Seconds = 0;
 let Minutes = 0;
 let Hours = 0;
 
-
-
-//time "display" values
-//let displayuSeconds = 0;
 let displaySeconds = 0;
 let displayMinutes = 0;
 let displayHours = 0;
@@ -113,148 +90,171 @@ function reloadPage(){
     window.location.reload();
 }
 
-function Stage001(){
-    document.getElementById("stage001A").style.display="none";
-    document.getElementById("stage001B").style.display="none";
-    document.getElementById("stage001C").style.display="none";
-    document.getElementById("stage001D").style.display="none";
-    document.getElementById("stage001E").style.display="none";
+function Stage001() {
+  hideElements();
+  if (Minutes >= 1) {
+    const randomStage001 = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1) + min);
+    console.log(randomStage001(1, 5));
 
-    if(Minutes>=1) {
-        const randomStage001 = (min,max) =>Math.floor(Math.random()*(max-min+1)+min);
-        console.log(randomStage001(1,5))
-        
-        if(randomStage001(1,5)==1){document.getElementById("stage001E").style.display=null;}
-        else if(randomStage001(1,5)==2){document.getElementById("stage001B").style.display=null;}
-        else if(randomStage001(1,5)==3){document.getElementById("stage001C").style.display=null;}
-        else if(randomStage001(1,5)==4){document.getElementById("stage001D").style.display=null;}
-        else{document.getElementById("stage001A").style.display=null;}
+    if (randomStage001(1, 5) == 1) {
+      document.getElementById("stage001E").style.display = null;
+    } else if (randomStage001(1, 5) == 2) {
+      document.getElementById("stage001B").style.display = null;
+    } else if (randomStage001(1, 5) == 3) {
+      document.getElementById("stage001C").style.display = null;
+    } else if (randomStage001(1, 5) == 4) {
+      document.getElementById("stage001D").style.display = null;
+    } else {
+      document.getElementById("stage001A").style.display = null;
     }
+  }
 }
 
-function Stage001b(){
-    document.getElementById("stage001.5A").style.display="none";
-    document.getElementById("stage001.5B").style.display="none";
-    document.getElementById("stage001.5C").style.display="none";
-    document.getElementById("stage001.5D").style.display="none";
+function Stage001b() {
+  hideElements();
+  if (Minutes >= 1 & Minutes <2) {
+    const randomStage0015 = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1) + min);
+    console.log(randomStage0015(1, 4));
 
-    if(Minutes>=1 & Minutes<5) {
-        const randomStage0015 = (min,max) =>Math.floor(Math.random()*(max-min+1)+min);
-        console.log(randomStage0015(1,4))
-
-        if(randomStage0015(1,4)==1){document.getElementById("stage001.5A").style.display=null;}
-        else if(randomStage0015(1,4)==2){document.getElementById("stage001.5B").style.display=null;}
-        else if(randomStage0015(1,4)==3){document.getElementById("stage001.5C").style.display=null;}
-        else {document.getElementById("stage001.5D").style.display=null;}
+    if (randomStage0015(1, 4) == 1) {
+      document.getElementById("stage001.5D").style.display = null;
+    } else if (randomStage0015(1, 4) == 2) {
+      document.getElementById("stage001.5C").style.display = null;
+    } else if (randomStage0015(1, 4) == 3) {
+      document.getElementById("stage001.5B").style.display = null;
+    } else {
+      document.getElementById("stage001.5A").style.display = null;
     }
+  }
 }
 
-function Stage002(){
-    document.getElementById("stage002A").style.display="none";
-    document.getElementById("stage002B").style.display="none";
-    document.getElementById("stage002C").style.display="none";
+function Stage002() {
+  hideElements();
+  if (Minutes >= 2) {
+    const randomStage002 = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1) + min);
+    console.log(randomStage002(1, 3));
 
-    if(Minutes>=5) {
-        const randomStage002 = (min,max) =>Math.floor(Math.random()*(max-min+1)+min)
-        console.log(randomStage002(1,3))
-
-        if(randomStage002(1,3)==1){document.getElementById("stage002A").style.display=null;}
-        else if(randomStage002(1,3)==2){document.getElementById("stage002B").style.display=null;}
-        else {document.getElementById("stage002C").style.display=null;}
+    if (randomStage002(1, 3) == 1) {
+      document.getElementById("stage002C").style.display = null;
+    } else if (randomStage002(1, 3) == 2) {
+      document.getElementById("stage002B").style.display = null;
+    } else {
+      document.getElementById("stage002A").style.display = null;
     }
+  }
 }
 
-function Stage003(){
-    document.getElementById("stage003A").style.display="none";
-    document.getElementById("stage003B").style.display="none";
-    document.getElementById("stage003C").style.display="none";
-    document.getElementById("stage003D").style.display="none";
+function Stage003() {
+  hideElements();
+  if (Minutes >= 2 & Minutes <5) {
+    const randomStage003 = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1) + min);
+    console.log(randomStage003(1, 4));
 
-    if(Minutes>=5) {
-        const randomStage003 = (min,max) =>Math.floor(Math.random()*(max-min+1)+min)
-        console.log(randomStage003(1,4))
-
-        if(randomStage003(1,4)==1){document.getElementById("stage003A").style.display=null;}
-        else if(randomStage003(1,4)==2){document.getElementById("stage003B").style.display=null;}
-        else if(randomStage003(1,4)==3){document.getElementById("stage003C").style.display=null;}
-        else {document.getElementById("stage003D").style.display=null;}
+    if (randomStage003(1, 4) == 1) {
+      document.getElementById("stage003D").style.display = null;
+    } else if (randomStage003(1, 4) == 2) {
+      document.getElementById("stage003C").style.display = null;
+    } else if (randomStage003(1, 4) == 3) {
+      document.getElementById("stage003B").style.display = null;
+    } else {
+      document.getElementById("stage003A").style.display = null;
     }
+  }
 }
 
-function Stage003b(){
-    document.getElementById("stage003.5A").style.display="none";
-    document.getElementById("stage003.5B").style.display="none";
-    document.getElementById("stage003.5C").style.display="none";
+function Stage003b() {
+  hideElements();
+  if (Minutes >= 5 & Minutes <6) {
+    const randomStage0035 = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1) + min);
+    console.log(randomStage0035(1, 3));
 
-    if(Minutes>=5 & Minutes<10) {
-        const randomStage0035 = (min,max) =>Math.floor(Math.random()*(max-min+1)+min);
-        console.log(randomStage0035(1,3))
-
-        if(randomStage0035(1,3)==1){document.getElementById("stage003.5A").style.display=null;}
-        else if(randomStage0035(1,3)==2){document.getElementById("stage003.5B").style.display=null;}
-        else {document.getElementById("stage003.5C").style.display=null;}
+    if (randomStage0035(1, 3) == 1) {
+      document.getElementById("stage0035C").style.display = null;
+    } else if (randomStage0035(1, 3) == 2) {
+      document.getElementById("stage0035B").style.display = null;
+    } else {
+      document.getElementById("stage0035A").style.display = null;
     }
+  }
 }
 
-function Stage004(){
-    document.getElementById("stage004A").style.display="none";
-    document.getElementById("stage004B").style.display="none";
+function Stage004() {
+  hideElements();
+  if (Minutes >= 6) {
+    const randomStage004 = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1) + min);
+    console.log(randomStage004(1, 2));
 
-    if(Minutes>=10) {
-        
-        if(Seconds%2==0){document.getElementById("stage004A").style.display=null;}
-        else {document.getElementById("stage004B").style.display=null;}
+    if (randomStage004(1, 2) == 1) {
+      document.getElementById("stage004B").style.display = null;
+    } else {
+      document.getElementById("stage004A").style.display = null;
     }
+  }
 }
 
 function Stage005(){
     document.getElementById("stage005").style.display="none";
 
-    if(Minutes==10){document.getElementById("stage005").style.display=null;}
+    if(Minutes==6){document.getElementById("stage005").style.display=null;}
 }
 
-function Stage006(){
-    document.getElementById("stage006A").style.display="none";
-    document.getElementById("stage006B").style.display="none";
+function Stage006() {
+  hideElements();
+  if (Minutes > 6) {
+    const randomStage006 = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1) + min);
+    console.log(randomStage006(1, 2));
 
-    if(Minutes>10) {
-        
-        if(Seconds%2==0){document.getElementById("stage006A").style.display=null;}
-        else {document.getElementById("stage006B").style.display=null;}
+    if (randomStage006(1, 2) == 1) {
+      document.getElementById("stage006B").style.display = null;
+    } else {
+      document.getElementById("stage006A").style.display = null;
     }
+  }
 }
 
-function Stage007(){
-    document.getElementById("stage007A").style.display="none";
-    document.getElementById("stage007B").style.display="none";
-    document.getElementById("stage007C").style.display="none";
+function Stage007() {
+  hideElements();
+  if (Minutes > 6) {
+    const randomStage007 = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1) + min);
+    console.log(randomStage007(1, 3));
 
-    if(Minutes>10) {
-        const randomStage007 = (min,max) =>Math.floor(Math.random()*(max-min+1)+min);
-        console.log(randomStage007(1,3))
-
-        if(randomStage007(1,3)==1){document.getElementById("stage007A").style.display=null;}
-        else if(randomStage007(1,3)==2){document.getElementById("stage007B").style.display=null;}
-        else {document.getElementById("stage007C").style.display=null;}
+    if (randomStage007(1, 3) == 1) {
+      document.getElementById("stage007C").style.display = null;
+    } else if (randomStage007(1, 3) == 2) {
+      document.getElementById("stage007B").style.display = null;
+    } else {
+      document.getElementById("stage007A").style.display = null;
     }
+  }
 }
 
-function Stage008(){
-    document.getElementById("stage008A").style.display="none";
-    document.getElementById("stage008B").style.display="none";
-    document.getElementById("stage008C").style.display="none";
-    document.getElementById("stage008D").style.display="none";
+function Stage008() {
+  hideElements();
+  if (Minutes > 6) {
+    const randomStage008 = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1) + min);
+    console.log(randomStage008(1, 4));
 
-    if(Minutes>10) {
-        const randomStage008 = (min,max) =>Math.floor(Math.random()*(max-min+1)+min);
-        console.log(randomStage008(1,4))
-
-        if(randomStage008(1,4)==1){document.getElementById("stage008A").style.display=null;}
-        else if(randomStage008(1,4)==2){document.getElementById("stage008B").style.display=null;}
-        else if(randomStage008(1,4)==3){document.getElementById("stage008C").style.display=null;}
-        else {document.getElementById("stage008D").style.display=null;}
+    if (randomStage008(1, 4) == 1) {
+      document.getElementById("stage008D").style.display = null;
+    } else if (randomStage008(1, 4) == 2) {
+      document.getElementById("stage008C").style.display = null;
+    } else if (randomStage008(1, 4) == 3) {
+      document.getElementById("stage008B").style.display = null;
+    } else {
+      document.getElementById("stage008A").style.display = null;
     }
+  }
 }
+
 
 function Stage009(){
     document.getElementById("stage009A").style.display="none";
@@ -262,7 +262,6 @@ function Stage009(){
     if(Minutes>10) {document.getElementById("stage009A").style.display=null;}
     else {document.getElementById("stage009A").style.display="none";}
 }
-
 
 
 function backtop() {
